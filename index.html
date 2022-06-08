@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockbuster Hits</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <style> style.css </style>
+
+</head>
+<body>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center, text-color="white"">
+        <h1>Blockbuster Hits</h1>
+      </div>
+    </div>
+
+    <!╌ /* Genre dropdown menu */ ╌>
+    <div class="row">
+    <div class="col-md-2">
+        <div class="well">
+          <h5>Genre</h5>
+          <!-- /* <select id="selGenre"></select> */ -->
+          <select id="selGenre" onchange="optionChangedGenre(this.value)"></select>
+          <label id="genreCount">
+          <label id="genreRev">
+        </div> 
+
+        <!--/* Cast dropdown menu */-->
+      <div class="row">
+      <div class="col-md-2">
+        <div class="well">
+          <h5>Cast</h5>
+          <!-- /*<select id="selCast"></select> */ -->
+          <select id="selCast" onchange="optionChangedCast(this.value)"></select>
+        </div>
+
+        <!--/* Director dropdown menu */-->
+        <div class="row">
+        <div class="col-md-2">
+        <div class="well">
+          <h5>Director</h5>
+          <!-- <select id="selDirector"></select> -->
+          <select id="selDirector" onchange="optionChangedDirector(this.value)"></select>
+        </div>
+
+        <!--/* Composer dropdown menu */-->
+        <div class="row">
+        <div class="col-md-2">
+        <div class="well">
+          <h5>Composer</h5>
+          <!-- <select id="selComposer"></select> -->
+          <select id="selComposer" onchange="optionChangedComposer(this.value)"></select>
+        </div>
+
+        <!--/* Ratings dropdown menu */-->
+        <div class="row">
+        <div class="col-md-2">
+        <div class="well">
+          <h5>Ratings</h5>
+          <!-- /* <select id="selRating"></select> */ -->
+          <select id="selRating" onchange="optionChangedRating(this.value)"></select>
+        </div>
+<div id="bar"></div>
+<script> 
+  var filePath="{{url_for('static', filename='')}}"
+  console.log(filePath)
+</script>
+
+  <script src="{{ url_for('static', filename='plot.js') }}"></script>
+  <script src="{{ url_for('static', filename='charts.js') }}"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+</body>
+</html>
